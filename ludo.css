@@ -13,10 +13,12 @@ padding: 0px;}
   float:left;
   width:6vmin;
   height:6vmin;
+  position: static;
   
 }
  .class >div{
 position: absolute;
+
 }
 #top >.a:nth-child(even){
   background-color:green;
@@ -47,7 +49,6 @@ position: absolute;
 border-radius: 50%;
   height:60%;
   width:60%;
-  visibility: hidden;
   box-shadow: 2px 2px 4px black;
   border:2px solid black ;
 }

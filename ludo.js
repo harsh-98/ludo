@@ -13,7 +13,12 @@ var us1p = 0,
     us2p = 0,
     us3p = 0,
     us4p = 0;
-
+    //function users(color,pos,playing){
+        //this.color=color;
+        //this.pos=pos;
+        //this.playing=playing;
+    //}
+//var user1=new users("green",1,);
 function user() {
     k = parseInt(document.getElementById("user").value);
     switch (k) {
@@ -21,18 +26,24 @@ function user() {
             us4p = 1;
             make("40", user4);
         case 3:
-            make("27", user3);
             us3p = 1;
+            make("27", user3);
         case 2:
-            make("14", user2);
             us2p = 1;
+            make("14", user2);
         case 1:
             us1p = 1;
             make("1", user1);
 
     }
 }
+function make(y, color) {
+    var a = document.createElement("div");
+    $(a).addClass("circle").css("background-color", color);
 
+    document.getElementById(y).appendChild(a);
+
+}
 function roll() {
     //no=Math.ceil(Math.random()*6);
     //document.getElementById("roll").value=no;
@@ -71,61 +82,58 @@ function move() {
 
             setTimeout(
                 (function(x) {
-                    document.getElementById(x.toString()).removeChild(document.getElementById(x.toString()).lastChild);
+          document.getElementById(x.toString()).removeChild(document.getElementById(x.toString()).lastElementChild);
 
                 }).bind(this, t), 500 * i - 250);
             t++;
-
+            if(!t>100)t%=52;
             if (t == 52 && color == "green") t = 101;
             if (t == 12 && color == "red") t = 201;
 
             if (t == 26 && color == "blue") t = 301;
 
             if (t == 39 && color == "yellow") t = 401;
-            y = function(y) {
-                var a = document.createElement("div");
-                document.getElementById(y.toString()).appendChild(a);
-                $("#" + y).find("div").last().addClass("circle").css("visibility", "visible").css("background-color", color);
-            }.bind(this, t);
-            setTimeout(y, 500 * i);
 
-            //if(no==i)do1(t);
+            setTimeout(function(y) {
+                make(y,color);
+            }.bind(this, t), 500 * i);
         }
-        console.log(i);
+        
         setTimeout(
             (function(turn1) {
                 if (turn1 != 0 && t == user1_i && us1p == 1)
 
                 {
                     console.log(t);
-                    $("#1").find("div").addClass("circle").css("visibility", "visible").css("background-color", user1);
+                    dead(t);
                     user1_i = 1;
+                    make("1", user1);
                 } else if (turn1 != 1 && t == user2_i && us1p == 1)
 
                 {
                     console.log(t);
-                    give(14, user2);
+                    dead(t);
                     user2_i = 14;
-                } else if (turn1 != 2 && t == user3_i && us3p == 1) {
-                    console.log(t);
-                    give(27, user3);
+                    make("14", user2);
+                } else if (turn1 != 2 && t == user3_i && us3p == 1)
 
+                {
+                    console.log(t);
+                    dead(t);
+                    make("27", user3);
                     user3_i = 27;
-                } else if (turn1 != 3 && t == user4_i && us4p == 1) {
-                    console.log(t);
-                    give(40, user4);
+                } else if (turn1 != 3 && t == user4_i && us4p == 1)
 
+                {
+                    console.log(t);
+                    dead(t);
                     user4_i = 40;
+                    make("14", user2);
+
                 }
 
             }).bind(this, turn)
-
-
-
-            , 500 * i + 250);
-
-
-
+            , 500 * i -250);
         switch (turn) {
             case 0:
                 user1_i = t;
@@ -171,15 +179,9 @@ z(6);
 
 [4, 5, 6];
 */
-function make(y, color) {
-    var a = document.createElement("div");
-    $(a).addClass("circle").css("visibility", "visible").css("background-color", color);
 
-    document.getElementById(y).appendChild(a);
 
-}
+function dead(x) {
+    document.getElementById(x.toString()).removeChild(document.getElementById(x.toString()).childNodes[0]);
 
-function give(x, color) {
-    document.getElementById(x.toString()).removeChild(document.getElementById(x.toString()).lastChild);
-
-}
+}//.firstElementChild
