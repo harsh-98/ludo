@@ -1,0 +1,120 @@
+*{
+  margin: 0px;
+padding: 0px;}
+
+#main{
+  margin:auto;
+  margin-top:5vh;
+  width:90vmin;
+  height:90vmin;
+  background-color:blue;
+  border:solid black .3vmin;
+}
+.a{
+  float:left;
+  width:6vmin;
+  height:6vmin;
+  position: static;
+  overflow: hidden;
+  
+}
+button{
+  margin: 5px;
+}
+.class >div{
+position: absolute;
+
+}
+#top >.a:nth-child(even){
+  background-color:green;
+}
+#bottom >.a:nth-child(odd){
+  background-color:blue;
+}
+#left >.diff >.a:nth-child(even){
+  background-color:red;
+}
+#left >.diff + div > .a:nth-child(odd){
+  background-color:red;
+}
+#right >.diff +div >.a:nth-child(even){
+  background-color:yellow;
+}
+#right >.diff>.a:nth-child(odd){
+  background-color:yellow;
+}
+
+#main >div{
+  float:left;
+}
+.circle{
+  box-sizing: border-box;
+  text-align :center;
+  padding:.5vmin;
+  margin:auto;
+  margin-top:20%;
+  background-color: black;
+border-radius: 50%;
+  height:60%;
+  width:60%;
+  box-shadow: 2px 2px 4px black;
+  border:2px solid black ;
+}
+#sw,#nw,#ne, #se{
+  width:36vmin;
+  height:36vmin;
+  box-sizing: border-box;
+  border:black solid .3vmin;
+}
+#sw>div>div>div,#nw>div>div>div,#ne>div>div>div, #se>div>div>div{
+  @extend .circle;
+  margin-top:12%;
+}
+#sw>div>div,#nw>div>div,#ne>div>div, #se>div>div{
+float:left;width:6.5vmin;height:6.5vmin;
+margin:3.6vmin 3.6vmin 3.6vmin;
+}
+#sw>div,#nw>div,#ne>div, #se>div{
+box-sizing: border-box;
+  border:black solid .3vmin;
+}
+#sw,#sw>div>div,#sw>div>div>div{
+  background-color: red;
+}
+#nw,#nw>div>div,#nw>div>div>div{
+  background-color: green;
+
+}
+
+#se,#se>div>div>div,#se>div>div{
+   background-color: blue;
+
+}
+#ne,#ne>div>div,#ne>div>div>div{
+    background-color: yellow;
+
+}
+#cen{width:18vmin;
+height:18vmin;
+  background-color:grey;
+}
+#top{
+  width:18vmin;
+  height:36vmin;
+  background-color:white;
+}
+#bottom{
+  width:18vmin;
+  height:36vmin;
+  background-color:white;
+}
+#right{
+  height:18vmin;
+  width:36vmin;
+  background-color:white;
+}
+#left{
+  height:18vmin;
+  width:36vmin;
+  background-color:white;
+}

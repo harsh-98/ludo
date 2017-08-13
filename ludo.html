@@ -18,10 +18,10 @@ user4=yellow <br>
    
    
    <div style="width:28vmin;height:28vmin;margin:auto;margin-top:4vmin;background-color: white;">
-    <div id="red-1" ><div></div></div>
-    <div id="red-2" ><div></div></div>
-    <div id="red-3" ><div></div></div>
-    <div id="red-4" ><div></div></div>
+    <div id="gre-4" ><div>4</div></div>
+    <div id="gre-3" ><div>3</div></div>
+    <div id="gre-2" ><div>2</div></div>
+    <div id="gre-1" ><div>1</div></div>
   </div>
    </div>
    <div id="top">
@@ -47,10 +47,10 @@ user4=yellow <br>
    <div id="ne">
      
 <div style="width:28vmin;height:28vmin;margin:auto;margin-top:4vmin;background-color: white;">
-    <div id="gre-1" ><div></div></div>
-    <div id="gre-2" ><div></div></div>
-    <div id="gre-3" ><div></div></div>
-    <div id="gre-4" ><div></div></div>
+    <div id="yel-4" ><div>4</div></div>
+    <div id="yel-3" ><div>3</div></div>
+    <div id="yel-2" ><div>2</div></div>
+    <div id="yel-1" ><div>1</div></div>
   </div>
    </div>
    <div id="left">
@@ -109,10 +109,10 @@ user4=yellow <br>
    <div id="sw">
      
      <div style="width:28vmin;height:28vmin;margin:auto;margin-top:4vmin;background-color: white;">
-    <div id="blu-1" ><div></div></div>
-    <div id="blu-2" ><div></div></div>
-    <div id="blu-3"  ><div></div></div>
-    <div id="blu-4" ><div></div></div>
+    <div id="red-4" ><div>4</div></div>
+    <div id="red-3" ><div>3</div></div>
+    <div id="red-2"  ><div>2</div></div>
+    <div id="red-1" ><div>1</div></div>
   </div>
    </div>
 <div id="bottom">
@@ -137,22 +137,29 @@ user4=yellow <br>
    </div> 
    <div id="se">
      <div style="width:28vmin;height:28vmin;margin:auto;margin-top:4vmin;background-color: white;">
-    <div id="yel-1" ><div></div></div>
-    <div id="yel-2" ><div></div></div>
-    <div id="yel-3" ><div></div></div>
-    <div id="yel-4" ><div></div></div>
+    <div id="blu-4" ><div>4</div></div>
+    <div id="blu-3" ><div>3</div></div>
+    <div id="blu-2" ><div>2</div></div>
+    <div id="blu-1" ><div>1</div></div>
   </div>
 
    </div>
   
   
   </div>
-  <input type="text" id="roll">
-  <button onclick="roll()"> roll dice</button>
-  <input type="text" id="user">
-  <button onclick="user()">Assign the number of the players</button>
-  <button onclick="move()">move</button>
+  <div style="z-index:1;position:absolute;top: 30vmin;left:1vmin;">
+  <input type="text" id="roll" size="5">
+  <button onclick="roll()"> roll dice</button>  <button onclick="move()">move</button>
+<br>
+  <input type="text" id="user" size="5">
+  <button onclick="user()">Assign the number of the players</button><br>
+  <button onclick="allow_new_part()">Allow new part if 1</button><br>
+  <button onclick="choose(1)">move part 1  </button><br>
+  <button onclick="choose(2)">move part 2</button><br>
+  <button onclick="choose(3)">  move part 3</button><br>
+  <button onclick="choose(4)">  move part 4</button><br>
   <button onclick="new_game()">NEW GAME</button>
+  </div>
   <script>
   
   </script>

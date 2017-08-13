@@ -14,7 +14,11 @@
   float: left;
   width: 6vmin;
   height: 6vmin;
-  position: static; }
+  position: static;
+  overflow: hidden; }
+
+button {
+  margin: 5px; }
 
 .class > div {
   position: absolute; }
@@ -40,7 +44,10 @@
 #main > div {
   float: left; }
 
-.circle, #nw > div > div > div, #ne > div > div > div, #se > div > div > div, #sw > div > div > div {
+.circle, #sw > div > div > div, #nw > div > div > div, #ne > div > div > div, #se > div > div > div {
+  box-sizing: border-box;
+  text-align: center;
+  padding: .5vmin;
   margin: auto;
   margin-top: 20%;
   background-color: black;
@@ -50,35 +57,35 @@
   box-shadow: 2px 2px 4px black;
   border: 2px solid black; }
 
-#nw, #ne, #se, #sw {
+#sw, #nw, #ne, #se {
   width: 36vmin;
   height: 36vmin;
   box-sizing: border-box;
   border: black solid .3vmin; }
 
-#nw > div > div > div, #ne > div > div > div, #se > div > div > div, #sw > div > div > div {
+#sw > div > div > div, #nw > div > div > div, #ne > div > div > div, #se > div > div > div {
   margin-top: 12%; }
 
-#nw > div > div, #ne > div > div, #se > div > div, #sw > div > div {
+#sw > div > div, #nw > div > div, #ne > div > div, #se > div > div {
   float: left;
   width: 6.5vmin;
   height: 6.5vmin;
   margin: 3.6vmin 3.6vmin 3.6vmin; }
 
-#nw > div, #ne > div, #se > div, #sw > div {
+#sw > div, #nw > div, #ne > div, #se > div {
   box-sizing: border-box;
   border: black solid .3vmin; }
 
-#nw, #nw > div > div, #nw > div > div > div {
+#sw, #sw > div > div, #sw > div > div > div {
   background-color: red; }
 
-#ne, #ne > div > div, #ne > div > div > div {
+#nw, #nw > div > div, #nw > div > div > div {
   background-color: green; }
 
-#sw, #sw > div > div > div, #sw > div > div {
+#se, #se > div > div > div, #se > div > div {
   background-color: blue; }
 
-#se, #se > div > div, #se > div > div > div {
+#ne, #ne > div > div, #ne > div > div > div {
   background-color: yellow; }
 
 #cen {
