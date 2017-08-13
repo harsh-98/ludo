@@ -13,13 +13,19 @@ var us1p = 0,
     us2p = 0,
     us3p = 0,
     us4p = 0;
+var player_assign_allow=1; 
     //function users(color,pos,playing){
         //this.color=color;
         //this.pos=pos;
         //this.playing=playing;
     //}
 //var user1=new users("green",1,);
+//function user(){
+// user1();
+//}
+//players are made and postion are given are marked with color  and the usp are assigned
 function user() {
+    if(player_assign_allow==1){
     k = parseInt(document.getElementById("user").value);
     switch (k) {
         case 4:
@@ -35,7 +41,15 @@ function user() {
             us1p = 1;
             make("1", user1);
 
-    }
+    }}
+    player_assign_allow=0;
+}
+function new_game(){
+    for (i=0;i<document.getElementsByClassName('a').length;i++)
+        for (j=0;j<document.getElementsByClassName('a')[i].childNodes.length;j++)
+    document.getElementsByClassName('a')[i].removeChild(document.getElementsByClassName('a')[i].childNodes[j]);
+    player_assign_allow=1;
+
 }
 function make(y, color) {
     var a = document.createElement("div");
@@ -46,7 +60,7 @@ function make(y, color) {
 }
 function roll() {
     //no=Math.ceil(Math.random()*6);
-    //document.getElementById("roll").value=no;
+//    document.getElementById("roll").value=no;
     no = document.getElementById("roll").value;
     allow = 1;
 
@@ -86,13 +100,13 @@ function move() {
 
                 }).bind(this, t), 500 * i - 250);
             t++;
-            if(!t>100)t%=52;
+            if(t==53){t=1;}
             if (t == 52 && color == "green") t = 101;
-            if (t == 12 && color == "red") t = 201;
+            if (t == 13 && color == "red") t = 201;
 
-            if (t == 26 && color == "blue") t = 301;
+            if (t == 26 && color == "blue") t = 401;
 
-            if (t == 39 && color == "yellow") t = 401;
+            if (t == 39 && color == "yellow") t = 301;
 
             setTimeout(function(y) {
                 make(y,color);

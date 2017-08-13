@@ -1,83 +1,109 @@
-*{
+* {
   margin: 0px;
-padding: 0px;}
+  padding: 0px; }
 
-#main{
-  margin:auto;
-  margin-top:5vh;
-  width:90vmin;
-  height:90vmin;
-  background-color:blue;
-}
-.a{
-  float:left;
-  width:6vmin;
-  height:6vmin;
-  position: static;
-  
-}
- .class >div{
-position: absolute;
+#main {
+  margin: auto;
+  margin-top: 5vh;
+  width: 90vmin;
+  height: 90vmin;
+  background-color: blue;
+  border: solid black .3vmin; }
 
-}
-#top >.a:nth-child(even){
-  background-color:green;
-}
-#bottom >.a:nth-child(odd){
-  background-color:blue;
-}
-#left >.diff >.a:nth-child(even){
-  background-color:red;
-}
-#left >.diff + div > .a:nth-child(odd){
-  background-color:red;
-}
-#right >.diff +div >.a:nth-child(even){
-  background-color:yellow;
-}
-#right >.diff>.a:nth-child(odd){
-  background-color:yellow;
-}
+.a {
+  float: left;
+  width: 6vmin;
+  height: 6vmin;
+  position: static; }
 
-#main >div{
-  float:left;
-}
-.circle{
-  margin:auto;
-  margin-top:20%;
+.class > div {
+  position: absolute; }
+
+#top > .a:nth-child(even) {
+  background-color: green; }
+
+#bottom > .a:nth-child(odd) {
+  background-color: blue; }
+
+#left > .diff > .a:nth-child(even) {
+  background-color: red; }
+
+#left > .diff + div > .a:nth-child(odd) {
+  background-color: red; }
+
+#right > .diff + div > .a:nth-child(even) {
+  background-color: yellow; }
+
+#right > .diff > .a:nth-child(odd) {
+  background-color: yellow; }
+
+#main > div {
+  float: left; }
+
+.circle, #nw > div > div > div, #ne > div > div > div, #se > div > div > div, #sw > div > div > div {
+  margin: auto;
+  margin-top: 20%;
   background-color: black;
-border-radius: 50%;
-  height:60%;
-  width:60%;
+  border-radius: 50%;
+  height: 60%;
+  width: 60%;
   box-shadow: 2px 2px 4px black;
-  border:2px solid black ;
-}
-#nw,#ne,#se, #sw{
-  width:36vmin;
-  height:36vmin;
-background-color: pink;
-}
-#cen{width:18vmin;
-height:18vmin;
-  background-color:grey;
-}
-#top{
-  width:18vmin;
-  height:36vmin;
-  background-color:white;
-}
-#bottom{
-  width:18vmin;
-  height:36vmin;
-  background-color:white;
-}
-#right{
-  height:18vmin;
-  width:36vmin;
-  background-color:white;
-}
-#left{
-  height:18vmin;
-  width:36vmin;
-  background-color:white;
-}
+  border: 2px solid black; }
+
+#nw, #ne, #se, #sw {
+  width: 36vmin;
+  height: 36vmin;
+  box-sizing: border-box;
+  border: black solid .3vmin; }
+
+#nw > div > div > div, #ne > div > div > div, #se > div > div > div, #sw > div > div > div {
+  margin-top: 12%; }
+
+#nw > div > div, #ne > div > div, #se > div > div, #sw > div > div {
+  float: left;
+  width: 6.5vmin;
+  height: 6.5vmin;
+  margin: 3.6vmin 3.6vmin 3.6vmin; }
+
+#nw > div, #ne > div, #se > div, #sw > div {
+  box-sizing: border-box;
+  border: black solid .3vmin; }
+
+#nw, #nw > div > div, #nw > div > div > div {
+  background-color: red; }
+
+#ne, #ne > div > div, #ne > div > div > div {
+  background-color: green; }
+
+#sw, #sw > div > div > div, #sw > div > div {
+  background-color: blue; }
+
+#se, #se > div > div, #se > div > div > div {
+  background-color: yellow; }
+
+#cen {
+  width: 18vmin;
+  height: 18vmin;
+  background-color: grey; }
+
+#top {
+  width: 18vmin;
+  height: 36vmin;
+  background-color: white; }
+
+#bottom {
+  width: 18vmin;
+  height: 36vmin;
+  background-color: white; }
+
+#right {
+  height: 18vmin;
+  width: 36vmin;
+  background-color: white; }
+
+#left {
+  height: 18vmin;
+  width: 36vmin;
+  background-color: white; }
+
+/*# sourceMappingURL=ludo.css.map */
