@@ -91,7 +91,9 @@ button {
 #cen {
   width: 18vmin;
   height: 18vmin;
-  background-color: grey; }
+  background-color: white;
+  background: url("pics/home.jpeg");
+  background-size: cover; }
 
 #top {
   width: 18vmin;
