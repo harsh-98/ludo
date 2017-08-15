@@ -32,17 +32,17 @@ var allow_part = 1;
 //}
 //players are made and postion are given are marked with color  and the usp are assigned
 function choose(x) {
-    if (x == 1) sel = 1;
-    if (x == 2) sel = 2;
-    if (x == 3) sel = 3;
-    if (x == 4) sel = 4;
-    move();
+    if (x == 1&&user1_i[5]==1) {sel = 1;move();}
+    if (x == 2&&user2_i[6]==1) {sel = 2;move();}
+    if (x == 3&&user3_i[7]==1) {sel = 3;move();}
+    if (x == 4&&user4_i[8]==1) {sel = 4;move();}
+    
 }
 
 function roll() {
-     no=Math.ceil(Math.random()*6);
-    document.getElementById("roll").value=no;
- //   no = document.getElementById("roll").value;
+     //no=Math.ceil(Math.random()*6);
+//    document.getElementById("roll").value=no;
+   no = document.getElementById("roll").value;
     allow = 1;
     allow_part = 1;
 
@@ -133,13 +133,12 @@ function allow_new_part() {
             case 0:
                 if (user1_playing_parts != 0) {
                     user1_playing_parts--;
-                    var which_del = 4 - user1_playing_parts;
                     //  var a= document.getElementById("gre-2").childNodes;
                     for (i = 1; i <= 4; i++)
                         if (document.getElementById("gre-" + i).childNodes[0] != null) {
                             break;
                         }
-                        user1_i[4-user1_playing_parts+4]=1;
+                        user1_i[i+4]=1;
 
                     dead("gre-" + i);
 
@@ -149,13 +148,12 @@ function allow_new_part() {
             case 1:
                 if (user2_playing_parts != 0) {
                     user2_playing_parts--;
-                    var which_del = 4 - user2_playing_parts;
                     for (i = 1; i <= 4; i++)
                         if (document.getElementById("red-" + i).childNodes[0] != null) {
                             break;
                         }
 
-                         user2_i[4-user2_playing_parts+4]=1;
+                         user2_i[i+4]=1;
                     dead("red-" + i);
 
                     make(14, "red", i);
@@ -165,12 +163,11 @@ function allow_new_part() {
                 if (user3_playing_parts != 0) {
 
                     user3_playing_parts--;
-                    var which_del = 4 - user3_playing_parts;
                     for (i = 1; i <= 4; i++)
                         if (document.getElementById("blu-" + i).childNodes[0] != null) {
                             break;
                         }
-                         user3_i[4-user3_playing_parts+4]=1;
+                         user3_i[i+4]=1;
 
                     dead("blu-" + i);
 
@@ -188,7 +185,7 @@ function allow_new_part() {
                             break;
                         }
 
-                         user4_i[4-user4_playing_parts+4]=1;
+                         user4_i[i+4]=1;
                     dead("yel-" + i);
 
                     make(40, "yellow", i);
@@ -283,35 +280,35 @@ function move() {
                     console.log(t);
                     dead_last(t);
                     user1_i[ele_2_die] = 1;
-                    user1_playing_parts++;
                     make("gre-" + ele_2_die, user1, ele_2_die);
-                     user1_i[4-user1_playing_parts+4]=0;
+                     user1_i[sel1+4]=0;
+                    user1_playing_parts++;
                 } else if (turn1 != 1 && t == user2_i[sel1] && us2p == 1)
 
                 {
                     console.log(t);
                     dead_last(t);
                     user2_i[ele_2_die] = 14;
-                    user2_playing_parts++;
                     make("red-" + ele_2_die, user2, ele_2_die);
-                    user2_i[4-user2_playing_parts+4]=0;
+                    user2_i[sel1+4]=0;
+                    user2_playing_parts++;
                 } else if (turn1 != 2 && t == user3_i[sel1] && us3p == 1)
 
                 {
                     console.log(t);
                     dead_last(t);
                     make("blu-" + ele_2_die, user3, ele_2_die);
-                    user3_playing_parts++;
                     user3_i[ele_2_die] = 27;
-                    user3_i[4-user3_playing_parts+4]=0;
+                    user3_i[sel1+4]=0;
+                    user3_playing_parts++;
                 } else if (turn1 != 3 && t == user4_i[sel1] && us4p == 1)
 
                 {
                     console.log(t);
                     dead_last(t);
                     user4_i[ele_2_die] = 40;
+                    user4_i[sel1+4]=0;
                     user4_playing_parts++;
-                    user4_i[4-user4_playing_parts+4]=0;
                     make("yel-" + ele_2_die, user2, ele_2_die);
 
                 }
