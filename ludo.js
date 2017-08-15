@@ -32,17 +32,31 @@ var allow_part = 1;
 //}
 //players are made and postion are given are marked with color  and the usp are assigned
 function choose(x) {
-    if (x == 1&&user1_i[5]==1) {sel = 1;move();}
-    if (x == 2&&user2_i[6]==1) {sel = 2;move();}
-    if (x == 3&&user3_i[7]==1) {sel = 3;move();}
-    if (x == 4&&user4_i[8]==1) {sel = 4;move();}
+    switch(turn){
+        case 0:
+        var arr=user1_i;
+        break;
+        case 1:
+        var arr=user2_i;
+        break;
+        case 2:
+        var arr=user3_i;
+        break;
+        case 3:
+        var arr=user4_i;
+        break;
+    }
+    if (x == 1&&arr[5]==1) {sel = 1;move();}
+    if (x == 2&&arr[6]==1) {sel = 2;move();}
+    if (x == 3&&arr[7]==1) {sel = 3;move();}
+    if (x == 4&&arr[8]==1) {sel = 4;move();}
     
 }
 
 function roll() {
-     //no=Math.ceil(Math.random()*6);
-//    document.getElementById("roll").value=no;
-   no = document.getElementById("roll").value;
+    // no=Math.ceil(Math.random()*6);
+// document.getElementById("roll").value=no;
+ no = document.getElementById("roll").value;
     allow = 1;
     allow_part = 1;
 
