@@ -240,7 +240,7 @@ function move() {
         }
         console.log(t);
         for (i = 1; i <= no; i++) {
-
+            if(!(t>405||(t>105&&t<200)||(t>205&&t<300)||(t>305&&t<400))){
             if (t == 1 || t == 14 || t == 27 || t == 40)
                 setTimeout(
                     (function(x, sel) {
@@ -277,9 +277,9 @@ function move() {
 
             setTimeout(function(y, color, sel) {
                 make(y, color, sel);
-            }.bind(this, t, color, sel), 500 * i);
+            }.bind(this, t, color, sel), 500 * i);}
         }
-
+        t--;
         setTimeout(
             (function(turn1,t) {
                 if (document.getElementById(t).childNodes[1] != null)
