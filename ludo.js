@@ -54,9 +54,9 @@ function choose(x) {
 }
 
 function roll() {
-    // no=Math.ceil(Math.random()*6);
-// document.getElementById("roll").value=no;
- no = document.getElementById("roll").value;
+     no=Math.ceil(Math.random()*6);
+ document.getElementById("roll").value=no;
+ //no = document.getElementById("roll").value;
     allow = 1;
     allow_part = 1;
 
@@ -279,7 +279,7 @@ function move() {
                 make(y, color, sel);
             }.bind(this, t, color, sel), 500 * i);}
         }
-        t--;
+
         setTimeout(
             (function(turn1,t) {
                 if (document.getElementById(t).childNodes[1] != null)
