@@ -5,6 +5,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="ludo.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="/home/harsh/BACKUP/1/jQuery.js"></script>
 <script src="ludo.js"></script>
 </head>
 <body>
@@ -12,6 +13,7 @@
 user2=red <br>
 user3=blue <br>
 user4=yellow <br>
+<button onclick="new_game()">NEW GAME</button>
 </div>
  <div id="main">
    <div id="nw">
@@ -150,6 +152,7 @@ user4=yellow <br>
   <div style="z-index:1;position:absolute;top: 30vmin;left:1vmin;">
   <input type="text" id="roll" size="5">
   <button onclick="roll()"> roll dice</button> 
+  <button onclick="roll_unlimited_access()">roll unlimited</button>
 <br>
   <input type="text" id="user" size="5">
   <button onclick="user()">Assign the number of the players</button><br>
@@ -158,7 +161,8 @@ user4=yellow <br>
   <button onclick="choose(2)">move part 2</button><br>
   <button onclick="choose(3)">  move part 3</button><br>
   <button onclick="choose(4)">  move part 4</button><br>
-  <button onclick="new_game()">NEW GAME</button>
+  
+  <button onclick="turn=(turn+1)%k;">pass</button>
   </div>
   <script>
   

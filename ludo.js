@@ -61,6 +61,11 @@ function roll() {
     allow_part = 1;
 
 }
+function roll_unlimited_access(){
+    no = document.getElementById("roll").value;
+    allow = 1;
+    allow_part = 1;
+}
 
 function new_game() {
     window.location = "ludo.html";
@@ -235,7 +240,7 @@ function move() {
             case 3:
                 t = user4_i[sel];
                 color = user4;
-                color = "rgb(255, 255, 0)";
+                color1 = "rgb(255, 255, 0)";
                 break;
         }
         console.log(t);
