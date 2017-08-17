@@ -216,7 +216,58 @@ function allow_new_part() {
         //allow_part=0;
     }
 }
+function pass(){
+    turn=(turn+1)%k;
+}
+function uniKeyCode(event) {
+    var key_num =  event.keyCode;
+    if(key_num==82){
+        roll();
+    document.getElementById("demo").innerHTML = "rolling the dice";
+    }
+    if(key_num==78){
+        allow_new_part();
+        document.getElementById("demo").innerHTML = "allowing new part";
+    }
+    if(key_num==96){
+        pass();
+        document.getElementById("demo").innerHTML = "passed the chance to the new player";
+    }
+    if(key_num==70){
+        document.getElementById("user").focus();
+        document.getElementById("user").value="";
+        document.getElementById("demo").innerHTML = "enter the number of players";
+        
+    }
+    if(key_num==83){
+        user();
+        document.getElementById("user").value="";
+        document.getElementById("user").blur();
+        document.getElementById("demo").innerHTML = "the number of players is selected";
 
+    }
+    if(key_num==97){
+        choose(1);
+        document.getElementById("demo").innerHTML = "moving the part 1";
+
+    }
+    if(key_num==98){
+        choose(2);
+        document.getElementById("demo").innerHTML = "moving the part 2";
+
+    }
+    if(key_num==99){
+        choose(3);
+        document.getElementById("demo").innerHTML = "moving the part 3";
+
+    }
+    if(key_num==100){
+        choose(4);
+        document.getElementById("demo").innerHTML = "moving the part 4";
+
+    }
+   
+}
 function move() {
     if (allow == 1) {
         var t = 0;

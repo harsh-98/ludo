@@ -8,8 +8,10 @@
 <script src="/home/harsh/BACKUP/1/jQuery.js"></script>
 <script src="ludo.js"></script>
 </head>
-<body>
-<div  style="position:fixed;width:10vw;">user1=green <br>
+<body  onkeyup="uniKeyCode(event)"> 
+
+
+<div  style="position:fixed;width:10vw; padding:4vmin;">user1=green <br>
 user2=red <br>
 user3=blue <br>
 user4=yellow <br>
@@ -150,6 +152,8 @@ user4=yellow <br>
   
   </div>
   <div style="z-index:1;position:absolute;top: 30vmin;left:1vmin;">
+  <div id="demo"></div>
+
   <input type="text" id="roll" size="5">
   <button onclick="roll()"> roll dice</button> 
   <button onclick="roll_unlimited_access()">roll unlimited</button>
@@ -163,6 +167,20 @@ user4=yellow <br>
   <button onclick="choose(4)">  move part 4</button><br>
   
   <button onclick="turn=(turn+1)%k;">pass</button>
+  </div>
+  <div style="position: absolute;top:10vmin;right:1vmin; border:solid 1px black;padding: 6px;" >
+  <h1>INSTRUCTIONS --</h1>
+  <br><hr>
+   r- roll <br><br>
+   n -for the new part  <br><br>
+   f - for entering the number of players <br><br>
+   s - for saving the number of the players entered <br><br>
+   numpad1 - for moving the part1 <br><br>
+   numpad2 - for moving the part2 <br><br>
+   numpad3 - for moving the part3 <br><br>
+   numpad4 - for moving the part4 <br><br>
+  numpad0 - for passing to the other person<br><br>
+
   </div>
   <script>
   
