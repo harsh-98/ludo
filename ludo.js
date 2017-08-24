@@ -147,7 +147,7 @@ function user() {
 }
 
 function allow_new_part() {
-    if (no == 1 && allow_part == 1) {
+    if (no == 6 && allow_part == 1) {
         switch (turn) {
             case 0:
                 if (user1_playing_parts != 0) {
@@ -212,7 +212,8 @@ function allow_new_part() {
 
                 break;
         }
-        next_player();
+
+        //next_player();
         //allow_part=0;
     }
 }
@@ -401,7 +402,7 @@ function move() {
 
 
     }
-
+if(no!=6)
     next_player();
     sel = 1;
 }
