@@ -48,6 +48,8 @@ button {
   box-sizing: border-box;
   text-align: center;
   padding: .5vmin;
+    font-size: 2.5vmin;
+
   margin: auto;
   margin-top: 20%;
   background-color: black;
