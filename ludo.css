@@ -1,7 +1,14 @@
 * {
   margin: 0px;
   padding: 0px; }
+body{background:-webkit-linear-gradient(#8860D0,#5680E9,#5AB9EA);
+background:-o-linear-gradient(#8860D0,#5680E9,#5AB9EA);
+background:-moz-linear-gradient(#8860D0,#5680E9,#5AB9EA);
+background:linear-gradient(#8860D0,#5680E9,#5AB9EA);
 
+
+
+}
 #main {
   margin: auto;
   margin-top: 5vh;
@@ -94,7 +101,12 @@ button {
   width: 18vmin;
   height: 18vmin;
   background-color: white;
-  background: url("pics/home.jpeg");
+  background: white;
+  line-height:18vmin ;
+  box-sizing:border-box;
+  padding:7vmin 0px ;
+  font:italic bold 4vmin serif;
+  text-align:center;
   background-size: cover; }
 
 #top {
