@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <title>Document</title>
   <link rel="stylesheet" href="ludo.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="/home/harsh/BACKUP/1/jQuery.js"></script>
-<script src="ludo2.js"></script>
+
+
 </head>
 <body   id="body"> 
 
@@ -16,6 +15,7 @@ user2=red <br>
 user3=blue <br>
 user4=yellow <br>
 <button onclick="new_game()">NEW GAME</button>
+
 </div>
  <div id="main">
    <div id="nw">
@@ -157,9 +157,9 @@ user4=yellow <br>
   <input type="text" id="roll" size="5">
   <button  id="roll_button"> roll dice</button> 
 <br>
-  <input type="text" id="user" size="5">
-  <button  id="assign_user" >Assign the number of the players</button><br>
-  <button  id="allow_new_part">Allow token part if 6</button><br>
+  <input type="text" id="user" size="5" style="display:none">
+  
+  <button  id="allow_new_part">Allow new token part if 6</button><br>
   <button id="choose_1">move token 1</button><br>
   <button id="choose_2">move token 2</button><br>
   <button id="choose_3">  move token 3</button><br>
@@ -172,8 +172,7 @@ user4=yellow <br>
   <br><hr>
    R - Rolling the dice <br><br>
    N - Getting the new token on track  <br><br>
-   F - For focusing the  <br><br>
-   s - for saving the number of the players entered <br><br>
+   P - Passing the chance to next player <br><br>
    numpad1 - for moving the torken 1 <br><br>
    numpad2 - for moving the torken 2 <br><br>
    numpad3 - for moving the torken 3 <br><br>
@@ -181,8 +180,10 @@ user4=yellow <br>
   numpad0 - for passing to the other person<br><br>
 
   </div>
-  <script>
-  
-  </script>
+<script type="text/javascript">
+var tmp = prompt("Enter your the number of players !!", 0);
+document.getElementById("user").value = tmp;
+</script>
+<script src="ludo2.js"></script>
 </body>
 </html>

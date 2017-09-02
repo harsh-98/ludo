@@ -9,6 +9,10 @@ background:linear-gradient(#8860D0,#5680E9,#5AB9EA);
 
 
 }
+html{
+  height:100vh;
+  width:100vw;
+}
 #main {
   margin: auto;
   margin-top: 5vh;

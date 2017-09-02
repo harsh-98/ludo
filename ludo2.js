@@ -5,7 +5,7 @@ var k = 0,
     sel = 1,
     no = 0,
     allow_part = 1;
-
+var control=1;
 var user1, user2, user3, user4;
 
 
@@ -140,6 +140,11 @@ var game = {
         document.getElementById("demo").innerHTML = "moving the part 2";
 
     }
+       if(key_num==80){
+        game.pass();
+        document.getElementById("demo").innerHTML = "passing the chance";
+
+    }
     if(key_num==99){
         game.choose(3);
         document.getElementById("demo").innerHTML = "moving the part 3";
@@ -177,29 +182,34 @@ allow_new_part:function(){
     }
 },
 move:function () {
-    if (allow == 1) {
+    if (allow == 1 && control == 1) {
+        control=0;
         var t = 0;
         var color = "";
         switch (turn) {
             case 0:
                 t = user1.position_array[sel];
                 color = user1.color;
-                color1 = "rgb(0, 128, 0)";
+                //color1 = "rgb(0, 128, 0)";
+                color1 = "green";
                 break;
             case 1:
                 t = user2.position_array[sel];
                 color = user2.color;
-                color1 = "rgb(255, 0, 0)";
+                //color1 = "rgb(255, 0, 0)";
+                color1 = "red";
                 break;
             case 2:
                 t = user3.position_array[sel];
                 color = user3.color;
-                color1 = "rgb(0, 0, 255)";
+                //color1 = "rgb(0, 0, 255)";
+                color1 = "blue";
                 break;
             case 3:
                 t = user4.position_array[sel];
                 color = user4.color;
-                color1 = "rgb(255, 255, 0)";
+                //color1 = "rgb(255, 255, 0)";
+                color1 = "yellow";
                 break;
         }
         console.log(t);
@@ -211,8 +221,8 @@ move:function () {
                         var ele_color = document.getElementById(x.toString());
                         for (i = 0; i < ele_color.childNodes.length; i++) {
                             console.log(color1);
-                            console.log($(ele_color.childNodes[i]).css("background-color"));
-                            if (ele_color.childNodes[i].innerHTML == sel && $(ele_color.childNodes[i]).css("background-color") == color1) {
+                            console.log(ele_color.childNodes[i].style.backgroundColor);
+                            if (ele_color.childNodes[i].innerHTML == sel && ele_color.childNodes[i].style.backgroundColor == color1) {
                                 ele = ele_color.childNodes[i];
                                 break;
                             }
@@ -269,7 +279,7 @@ move:function () {
                 {
                     general_operation.lose_part(t,ele_2_die,user4);
                 }
-
+                control = 1;
             }).bind(this, turn,t), 500 * i - 250);
         switch (turn) {
             case 0:
@@ -308,8 +318,9 @@ var general_operation = {
         console.log(sel);
         var a = document.createElement("div");
         if (i == 0)
-            $(a).addClass("circle").css("background-color", color_);
-        $(a).text(sel);
+            a.setAttribute("class", "circle");
+        a.style.backgroundColor=color_;
+        a.innerText=sel;
         var y_node = document.getElementById(y);
 
         if (y_node.childNodes[0] != null) {
@@ -354,18 +365,18 @@ if (user_name.parts_in != 0) {
 };
 
 
-$(document).ready(function(){
+
 document.querySelector("#roll_button").addEventListener("click", game.roll);
-document.querySelector("#assign_user").addEventListener("click", game.user_assign);
+//document.querySelector("#assign_user").addEventListener("click", game.user_assign);
 document.querySelector("#allow_new_part").addEventListener("click", game.new_part);
 document.querySelector("#choose_1").addEventListener("click", game.new_part);
 document.querySelector("#choose_2").addEventListener("click", game.choose(2));
 document.querySelector("#choose_3").addEventListener("click", game.choose(3));
 document.querySelector("#choose_4").addEventListener("click", game.choose(4));
 document.querySelector("#body").addEventListener("keyup", game.uniKeyCode);
+game.user_assign();
+//document.querySelector("#roll_crack").addEventListener("click", game.roll_cracked);
 
-document.querySelector("#roll_crack").addEventListener("click", game.roll_cracked);
-});
 
 
 
