@@ -39,25 +39,25 @@ var game = {
                     general_operation.dead("yel-1");
                     user4.position_array[5] = 1;
                     general_operation.make("40", user4.color);
-                    //user4_playing_parts--;
+                    /*user4_playing_parts--;*/
                 case 3:
                     user3 = new user("blue", [0, 27, 27, 27, 27, 0, 0, 0, 0], 4,"blu-",27);
                     general_operation.dead("blu-1");
                     general_operation.make("27", user3.color);
                     user3.position_array[5] = 1;
-                    //user3_playing_parts--;
+                    /*user3_playing_parts--;*/
                 case 2:
                     user2 = new user("red", [0, 14, 14, 14, 14, 0, 0, 0, 0], 4,"red-",14);
                     general_operation.dead("red-1");
                     general_operation.make("14", user2.color);
                     user2.position_array[5] = 1;
-                    //user2_playing_parts--;
+                    /*user2_playing_parts--;*/
                 case 1:
                     user1 = new user("green", [0, 1, 1, 1, 1, 0, 0, 0, 0], 4,"gre-",1);
                     general_operation.dead("gre-1");
                     general_operation.make("1", user1.color);
                     user1.position_array[5] = 1;
-                    //user1_playing_parts--;
+                    /*user1_playing_parts--;*/
 
             }
         }
@@ -177,8 +177,8 @@ allow_new_part:function(){
                 break;
         }
 
-        //next_player();
-        //allow_part=0;
+        /*next_player();*/
+        /*allow_part=0;*/
     }
 },
 move:function () {
@@ -190,25 +190,25 @@ move:function () {
             case 0:
                 t = user1.position_array[sel];
                 color = user1.color;
-                //color1 = "rgb(0, 128, 0)";
+                /*color1 = "rgb(0, 128, 0)";*/
                 color1 = "green";
                 break;
             case 1:
                 t = user2.position_array[sel];
                 color = user2.color;
-                //color1 = "rgb(255, 0, 0)";
+                /*color1 = "rgb(255, 0, 0)";*/
                 color1 = "red";
                 break;
             case 2:
                 t = user3.position_array[sel];
                 color = user3.color;
-                //color1 = "rgb(0, 0, 255)";
+                /*color1 = "rgb(0, 0, 255)";*/
                 color1 = "blue";
                 break;
             case 3:
                 t = user4.position_array[sel];
                 color = user4.color;
-                //color1 = "rgb(255, 255, 0)";
+                /*color1 = "rgb(255, 255, 0)";*/
                 color1 = "yellow";
                 break;
         }
@@ -231,13 +231,7 @@ move:function () {
                         document.getElementById(x.toString()).removeChild(ele);
 
                     }).bind(this, t, sel), 500 * i - 250);
-          //  else {
-//                setTimeout(
-//                    (function(x) {
-//                        general_operation.dead(x);//
 
-//                    }).bind(this, t), 500 * i - 250);
-            }
             t++;
             if (t == 53) {
                 t = 1;
@@ -252,13 +246,14 @@ move:function () {
             setTimeout(function(y, color, sel) {
                 general_operation.make(y, color, sel);
             }.bind(this, t, color, sel), 500 * i);}
+        }
         
 
         setTimeout(
             (function(turn1,t) {
                 if (document.getElementById(t).childNodes[1] != null)
                     var ele_2_die = document.getElementById(t).childNodes[1].innerHTML;
-                //us1p is like is for whether the player is playing or not
+                /*us1p is like is for whether the player is playing or not*/
                 if (t == 1 || t == 14 || t == 27 || t == 40) {} else
                     for (sel1 = 1; sel1 <= 4; sel1++)
 
@@ -300,7 +295,9 @@ move:function () {
     
 if(no!=6)
     game.next_player();
-    sel = 1;}
+    
+    sel = 1;
+    }
 },
 next_player: function () {
     allow = 0;
@@ -367,7 +364,7 @@ if (user_name.parts_in != 0) {
 
 
 document.querySelector("#roll_button").addEventListener("click", game.roll);
-//document.querySelector("#assign_user").addEventListener("click", game.user_assign);
+/*document.querySelector("#assign_user").addEventListener("click", game.user_assign);*/
 document.querySelector("#allow_new_part").addEventListener("click", game.new_part);
 document.querySelector("#choose_1").addEventListener("click", game.new_part);
 document.querySelector("#choose_2").addEventListener("click", game.choose(2));
@@ -375,7 +372,7 @@ document.querySelector("#choose_3").addEventListener("click", game.choose(3));
 document.querySelector("#choose_4").addEventListener("click", game.choose(4));
 document.querySelector("#body").addEventListener("keyup", game.uniKeyCode);
 game.user_assign();
-//document.querySelector("#roll_crack").addEventListener("click", game.roll_cracked);
+/*document.querySelector("#roll_crack").addEventListener("click", game.roll_cracked);*/
 
 
 
