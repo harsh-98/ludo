@@ -44,6 +44,40 @@ position: absolute;
   background-color:yellow;
 }
 
+
+button {
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 3px 3px 4px black;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #e7e7e7; color: black; 
+    transition:transform , box-shadow 3s linear ;
+}
+input {
+    width:35px;
+    height:30px;
+    text-align: center;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input:focus {
+    border: 3px solid #555;
+}
+button:hover{
+  transform: scale(.95);
+  box-shadow: 1px 1px 1px black;
+}
+
 #main >div{
   float:left;
 }
