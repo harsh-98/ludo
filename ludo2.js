@@ -371,7 +371,6 @@ document.querySelector("#choose_2").addEventListener("click", game.choose(2));
 document.querySelector("#choose_3").addEventListener("click", game.choose(3));
 document.querySelector("#choose_4").addEventListener("click", game.choose(4));
 document.querySelector("#body").addEventListener("keyup", game.uniKeyCode);
-game.user_assign();
 /*document.querySelector("#roll_crack").addEventListener("click", game.roll_cracked);*/
 
 
